@@ -12,27 +12,70 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Accordion title="Rebecca Friedman" icon={<div>?</div>}>
-          Rebecca Friedman is an artist and designer based in Portland, Oregon.
-          Rebecca Friedman is an artist and designer based in Portland, Oregon.
-          Rebecca Friedman is an artist and designer based in Portland, Oregon.
-          Rebecca Friedman is an artist and designer based in Portland, Oregon.
-          Rebecca Friedman is an artist and designer based in Portland, Oregon.
-          Rebecca Friedman is an artist and designer based in Portland, Oregon.
-          Rebecca Friedman is an artist and designer based in Portland, Oregon.
-          Rebecca Friedman is an artist and designer based in Portland, Oregon.
+        <Accordion
+          title="Project Title"
+          subTitle="project subtitle"
+          icon={<div>?</div>}
+          description={
+            <>
+              Rebecca Friedman is an artist and designer based in Portland,
+              Oregon. Rebecca Friedman is an artist and designer based in
+              Portland, Oregon. Rebecca Friedman is an artist and designer based
+            </>
+          }
+        >
+          <img src="http://placekitten.com/200/300" />
+          <img src="http://placekitten.com/200/300" />
+          <img src="http://placekitten.com/200/300" />
+          <img src="http://placekitten.com/200/300" />
+          <img src="http://placekitten.com/200/300" />
+          <img src="http://placekitten.com/200/300" />
+          <img src="http://placekitten.com/200/300" />
         </Accordion>
-        <Accordion title="Rebecca Friedman" icon={<div>?</div>}>
-          Rebecca Friedman is an artist and designer based in Portland, Oregon.
-          Rebecca Friedman is an artist and designer based in Portland, Oregon.
-          Rebecca Friedman is an artist and designer based in Portland, Oregon.
+        <Accordion
+          title="Project Title"
+          subTitle="project subtitle"
+          icon={<div>?</div>}
+          description={
+            <>
+              Rebecca Friedman is an artist and designer based in Portland,
+              Oregon. Rebecca Friedman is an artist and designer based in
+              Portland, Oregon. Rebecca Friedman is an artist and designer based
+              in Portland, Oregon. Rebecca Friedman is an artist and designer
+              based in Portland, Oregon. Rebecca Friedman is an artist and
+              designer based in Portland, Oregon. Rebecca Friedman is an artist
+              and designer based in Portland, Oregon. Rebecca Friedman is an
+              artist and designer based in Portland, Oregon. Rebecca Friedman is
+              an artist and designer based in Portland, Oregon.
+            </>
+          }
+        >
+          <img src="http://placekitten.com/200/300" />
+          <img src="http://placekitten.com/200/300" />
+          <img src="http://placekitten.com/200/300" />
+          <img src="http://placekitten.com/200/300" />
+          <img src="http://placekitten.com/200/300" />
+          <img src="http://placekitten.com/200/300" />
+          <img src="http://placekitten.com/200/300" />
         </Accordion>
-        <Accordion title="Rebecca Friedman" icon={<div>?</div>}>
-          Rebecca Friedman is an artist and designer based in Portland, Oregon.
-          Rebecca Friedman is an artist and designer based in Portland, Oregon.
-          Rebecca Friedman is an artist and designer based in Portland, Oregon.
-          Rebecca Friedman is an artist and designer based in Portland, Oregon.
-          Rebecca Friedman is an artist and designer based in Portland, Oregon.
+        <Accordion
+          title="Project Title"
+          subTitle="project subtitle"
+          icon={<div>?</div>}
+          description={
+            <>
+              Rebecca Friedman is an artist and designer based in Portland,
+              Oregon. Rebecca Friedman is an artist and designer based in
+            </>
+          }
+        >
+          <img src="http://placekitten.com/200/300" />
+          <img src="http://placekitten.com/200/300" />
+          <img src="http://placekitten.com/200/300" />
+          <img src="http://placekitten.com/200/300" />
+          <img src="http://placekitten.com/200/300" />
+          <img src="http://placekitten.com/200/300" />
+          <img src="http://placekitten.com/200/300" />
         </Accordion>
       </main>
     </>
