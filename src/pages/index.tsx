@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Accordion } from "@components/Accordion";
 import Image from "next/image";
 
 export default function Home() {
@@ -10,7 +11,30 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>Hello World</main>
+      <main>
+        <Accordion title="Rebecca Friedman" icon={<div>?</div>}>
+          Rebecca Friedman is an artist and designer based in Portland, Oregon.
+          Rebecca Friedman is an artist and designer based in Portland, Oregon.
+          Rebecca Friedman is an artist and designer based in Portland, Oregon.
+          Rebecca Friedman is an artist and designer based in Portland, Oregon.
+          Rebecca Friedman is an artist and designer based in Portland, Oregon.
+          Rebecca Friedman is an artist and designer based in Portland, Oregon.
+          Rebecca Friedman is an artist and designer based in Portland, Oregon.
+          Rebecca Friedman is an artist and designer based in Portland, Oregon.
+        </Accordion>
+        <Accordion title="Rebecca Friedman" icon={<div>?</div>}>
+          Rebecca Friedman is an artist and designer based in Portland, Oregon.
+          Rebecca Friedman is an artist and designer based in Portland, Oregon.
+          Rebecca Friedman is an artist and designer based in Portland, Oregon.
+        </Accordion>
+        <Accordion title="Rebecca Friedman" icon={<div>?</div>}>
+          Rebecca Friedman is an artist and designer based in Portland, Oregon.
+          Rebecca Friedman is an artist and designer based in Portland, Oregon.
+          Rebecca Friedman is an artist and designer based in Portland, Oregon.
+          Rebecca Friedman is an artist and designer based in Portland, Oregon.
+          Rebecca Friedman is an artist and designer based in Portland, Oregon.
+        </Accordion>
+      </main>
     </>
   );
 }
