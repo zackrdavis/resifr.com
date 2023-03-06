@@ -16,6 +16,7 @@ export const Accordion = ({
   children,
 }: AccordionProps) => {
   const contentRef = useRef<HTMLDivElement>(null);
+  const titleMeasurRef = useRef<HTMLDivElement>(null);
   const [contentHeight, setContentHeight] = useState(0);
 
   const handleOpen = () => {
@@ -47,13 +48,36 @@ export const Accordion = ({
         }
       >
         {/* text content */}
-        <div className="w-full md:w-1/3 md:sticky md:top-0 md:self-start">
+        <div
+          className="w-full md:w-1/3 md:sticky md:self-start"
+          style={
+            contentHeight
+              ? { top: titleMeasurRef.current?.scrollHeight + "px" }
+              : {}
+          }
+        >
+          {/* invisible title measurer */}
+          <div className="overflow-hidden h-0">
+            <div className="text-lg" ref={titleMeasurRef}>
+              {title}
+            </div>
+          </div>
+
           <div>{subTitle}</div>
           <div>{description}</div>
         </div>
 
         {/* image content */}
-        <div className="w-full md:w-2/3 [&>img]:w-full">{children}</div>
+        <div
+          className="w-full md:w-2/3 [&>img]:w-full  transition-all delay-500 md:relative"
+          style={
+            contentHeight
+              ? { top: "-" + titleMeasurRef.current?.scrollHeight + "px" }
+              : { top: 0 }
+          }
+        >
+          {children}
+        </div>
       </div>
 
       <hr className={`h-1 bg-black`} />
