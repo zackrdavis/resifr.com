@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Accordion } from "@components/Accordion";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
   return (

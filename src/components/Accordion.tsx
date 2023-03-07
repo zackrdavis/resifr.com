@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type AccordionProps = {
   title: string;
@@ -16,7 +16,6 @@ export const Accordion = ({
   children,
 }: AccordionProps) => {
   const contentRef = useRef<HTMLDivElement>(null);
-  const titleMeasurRef = useRef<HTMLDivElement>(null);
   const [contentHeight, setContentHeight] = useState(0);
 
   const handleOpen = () => {
@@ -28,15 +27,17 @@ export const Accordion = ({
   };
 
   return (
-    <section className="flex flex-col">
+    <section className="flex flex-col relative">
+      <div className="absolute top-0 right-0">{icon}</div>
       <button
-        className={`text-lg flex self-end justify-between duration-500 ease-in-out w-full ${
-          contentHeight ? "md:w-1/3 md:sticky md:top-0" : ""
+        className={`flex text-lg self-end justify-between duration-500 ease-in-out w-full ${
+          contentHeight
+            ? "md:w-1/3 md:sticky md:top-0 md:opacity-0 md:max-h-0"
+            : "max-h-10"
         }`}
         onClick={handleOpen}
       >
-        <span>{title}</span>
-        {icon}
+        <div>{title}</div>
       </button>
 
       {/* collapsing wrap */}
@@ -48,36 +49,23 @@ export const Accordion = ({
         }
       >
         {/* text content */}
-        <div
-          className="w-full md:w-1/3 md:sticky md:self-start"
-          style={
-            contentHeight
-              ? { top: titleMeasurRef.current?.scrollHeight + "px" }
-              : {}
-          }
-        >
-          {/* invisible title measurer */}
-          <div className="overflow-hidden h-0">
-            <div className="text-lg" ref={titleMeasurRef}>
-              {title}
-            </div>
+        <div className="w-full md:w-1/3 md:sticky md:self-start md:top-0">
+          <div
+            className={`hidden text-lg duration-500 md:block ${
+              contentHeight
+                ? "md:translate-y-0 md:opacity-100"
+                : "md:-translate-y-full md:opacity-0"
+            }`}
+            onClick={handleOpen}
+          >
+            {title}
           </div>
-
           <div>{subTitle}</div>
           <div>{description}</div>
         </div>
 
         {/* image content */}
-        <div
-          className="w-full md:w-2/3 [&>img]:w-full  transition-all delay-500 md:relative"
-          style={
-            contentHeight
-              ? { top: "-" + titleMeasurRef.current?.scrollHeight + "px" }
-              : { top: 0 }
-          }
-        >
-          {children}
-        </div>
+        <div className="w-full md:w-2/3 [&>img]:w-full  ">{children}</div>
       </div>
 
       <hr className={`h-1 bg-black`} />
